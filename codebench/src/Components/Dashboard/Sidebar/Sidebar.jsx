@@ -1,45 +1,55 @@
-import React, { useRef } from 'react';
-import { BiHome, BiBookAlt, BiMessage, BiSolidReport, BiTask, BiStats, BiHelpCircle} from 'react-icons/bi';
+import React from 'react';
+import { useAuth0 } from "@auth0/auth0-react";
+import { BiHome, BiBookAlt, BiTask, BiStats, BiHelpCircle, BiLogOut, BiTime, BiCalendar } from 'react-icons/bi';
+import { Link } from "react-router-dom";  // Assuming you're using React Router
 import "./Sidebar.css";
 
 const Sidebar = () => {
-    return (
-        <>
-            <div className="menu">
-                <div className="logo">
-                    <BiBookAlt className='logo-icon' />
-                    <h2>AuraTracker</h2>
-                </div>
+    const { logout } = useAuth0();
 
-                <div className="menu--list">
-                    <a href="#" className="item">
-                        <BiHome className='icon'/>
-                        Dashboard
-                    </a>
-                    <a href="#" className="item">
-                        <BiTask className='icon'/>
-                        Assignment
-                    </a>
-                    <a href="#" className="item">
-                        <BiSolidReport className='icon'/>
-                        Report
-                    </a>
-                    <a href="#" className="item">
-                        <BiMessage className='icon'/>
-                        Message
-                    </a>
-                    <a href="#" className="item">
-                        <BiStats className='icon'/>
-                        Stats
-                    </a>
-                    <a href="#" className="item">
-                        <BiHelpCircle className='icon'/>
-                        Help
-                    </a>
-                </div>
+    const handleLogout = () => {
+        logout({ returnTo: window.location.origin }); // This will now use the correct port
+    };    
+
+    return (
+        
+        <div className="menu">
+            <div className="logo">
+                <BiBookAlt className='logo-icon' />
+                <h2>AuraTracker</h2>
             </div>
-            
-        </>
+
+            <div className="menu--list">
+                <Link to="/dashboard" className="item" aria-label="Dashboard">
+                    <BiHome className='icon' />
+                    Dashboard {/*dashborad button */}
+                </Link>
+                <Link to="/assignments" className="item" aria-label="Assignment">
+                    <BiTask className='icon' />
+                    Assignment {/*Assignment button */}
+                </Link>
+                <Link to="/calender" className="item" aria-label="Calender">
+                    <BiCalendar className='icon' />
+                    Calender {/*Calender button */}
+                </Link>
+                <Link to="/timetable" className="item" aria-label="Timetable">
+                    <BiTime className='icon' />
+                    Time Table {/*TimeTable button */}
+                </Link>
+                <Link to="/stats" className="item" aria-label="Stats">
+                    <BiStats className='icon' />
+                    Stats {/*Stats button */}
+                </Link>
+                <Link to="/help" className="item" aria-label="Help">
+                    <BiHelpCircle className='icon' />
+                    Help {/*Help button */}
+                </Link>
+                <button className="item" onClick={handleLogout} aria-label="Log Out">
+                    <BiLogOut className='icon' />
+                    Log Out {/*Logout button */}
+                </button>
+            </div>
+        </div>
     );
 }
 

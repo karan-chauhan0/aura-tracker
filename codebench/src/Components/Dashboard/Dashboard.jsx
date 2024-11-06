@@ -11,7 +11,7 @@ function Dashboard() {
             <div className="container-dashboard">
                 <div className="dashboard">
                     <Sidebar />
-                <div className="dashboard--content">
+                    <div className="dashboard--content">
                         <Content />
                         <Profile />
                     </div> 

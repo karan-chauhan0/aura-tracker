@@ -1,0 +1,51 @@
+body{
+    all: unset;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(221, 239, 255);
+}
+.calender{
+    display: flex;
+    gap: 20px;
+}
+
+.calender--content{
+    background: #fff;
+    flex: 1;
+    border-radius: 20px;
+    padding: 2rem;
+    display: flex;
+    gap: 1.5rem;
+    margin: 1rem;
+    justify-content: space-between;
+}
+
+.react-calendar {
+    width: 100%;
+    border: 1px solid #1f6873;
+    background: #09536f !important;
+    border-radius: 8px;
+    padding: 10px;
+    height: 340px;
+}
+
+.select-button-container {
+    margin-top: 20px;
+}
+
+.select-button {
+    padding: 10px 20px;
+    background-color: rgb(221, 239, 255);
+    color: #293546;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.select-button:hover {
+    color: #fff;
+    background-color: #293546;
+}

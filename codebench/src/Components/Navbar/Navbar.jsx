@@ -1,12 +1,11 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
-import { useNavigate } from "react-router-dom";
 import './Navbar.css';
 import logo from './logo.png';
 
 const Navbar = () => {
-    const { loginWithRedirect, logout, isAuthenticated, user } = useAuth0();
-    const navigate = useNavigate(); 
+    const { logout, isAuthenticated } = useAuth0();
+    // const navigate = useNavigate(); 
 
     return (
         <header className="header">
