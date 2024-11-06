@@ -1,7 +1,12 @@
 import React from 'react'
+import { BiUser } from 'react-icons/bi'
 
 export const Profile = () => {
   return (
-    <div>Profile</div>
+    <div>
+        <div className="profile">
+            <BiUser className='icon'/>
+        </div>
+    </div>
   )
 }
