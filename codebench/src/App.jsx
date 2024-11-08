@@ -4,12 +4,18 @@ import Dashboard from "./Components/Dashboard/Dashboard";
 import Login from "./Components/Login/Login";
 import ProtectedRoute from "./Components/ProtectedRoute";
 import Calender from "./Components/Dashboard/Sidebar/Calender/Calender";
-import Timetable from "./Components/Dashboard/Sidebar/TimeTable/TimeTable";
+import Assignment from "./Components/Dashboard/Sidebar/Assignment/Assignment";
+import TimeTableSecond from "./Components/Dashboard/Sidebar/TimeTable/TimeTableSecond";
+import TimeTableFirst from "./Components/Dashboard/Sidebar/TimeTable/TimeTableFirst";
+import TimeTable from "./Components/Dashboard/Sidebar/TimeTable/TimeTable";
+import Attendance from "./Components/Dashboard/Sidebar/Attendance/Attendance";
+import Help from "./Components/Dashboard/Sidebar/Help/Help";
 
 const App = () => {
     return (
         <Router>
             <Routes>
+                <Route path="/" element={<Login />} /> {/* Default to login */}
                 <Route
                     path="/calender"
                     element={
@@ -19,14 +25,53 @@ const App = () => {
                     }
                 />
                 <Route
-                    path="/timetable"
+                    path="/assignment"
                     element={
                         <ProtectedRoute>
-                            <Timetable />
+                            <Assignment />
                         </ProtectedRoute>
                     }
                 />
-                <Route path="/" element={<Login />} /> {/* Default to login */}
+                <Route
+                    path="/timetable"
+                    element={
+                        <ProtectedRoute>
+                            <TimeTable />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="/timetablefirst"
+                    element={
+                        <ProtectedRoute>
+                            <TimeTableFirst />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="/timetablesecond"
+                    element={
+                        <ProtectedRoute>
+                            <TimeTableSecond />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="/attendance"
+                    element={
+                        <ProtectedRoute>
+                            <Attendance />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="/help"
+                    element={
+                        <ProtectedRoute>
+                            <Help />
+                        </ProtectedRoute>
+                    }
+                />
                 <Route
                     path="/dashboard"
                     element={

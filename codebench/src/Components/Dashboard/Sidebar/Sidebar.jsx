@@ -1,6 +1,6 @@
 import React from 'react';
 import { useAuth0 } from "@auth0/auth0-react";
-import { BiHome, BiBookAlt, BiTask, BiStats, BiHelpCircle, BiLogOut, BiTime, BiCalendar } from 'react-icons/bi';
+import { BiHome, BiBookAlt, BiTask, BiStats, BiHelpCircle, BiLogOut, BiTime, BiCalendar, BiFingerprint } from 'react-icons/bi';
 import { Link } from "react-router-dom";  // Assuming you're using React Router
 import "./Sidebar.css";
 
@@ -16,7 +16,7 @@ const Sidebar = () => {
         <div className="menu">
             <div className="logo">
                 <BiBookAlt className='logo-icon' />
-                <h2>AuraTracker</h2>
+                <h2 className='head'>CodeBench</h2>
             </div>
 
             <div className="menu--list">
@@ -24,7 +24,11 @@ const Sidebar = () => {
                     <BiHome className='icon' />
                     Dashboard {/*dashborad button */}
                 </Link>
-                <Link to="/assignments" className="item" aria-label="Assignment">
+                <Link to="/attendance" className="item" aria-label="Attendance">
+                    <BiFingerprint className='icon' />
+                    Attendance {/*Attendance button */}
+                </Link>
+                <Link to="/assignment" className="item" aria-label="Assignment">
                     <BiTask className='icon' />
                     Assignment {/*Assignment button */}
                 </Link>

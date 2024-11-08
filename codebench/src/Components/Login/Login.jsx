@@ -23,28 +23,34 @@ const Login = () => {
         <>
             <Navbar />
             <div className="your-component-wrapper">
-            <div className="login-container">
-                <div className="login-content">
-                    <h1>Welcome to AuraTracker</h1>
-                    <p>Track your progress and reach your goals with ease!</p>
-                    
-                    {isAuthenticated ? (
-                        <>
-                            <span className="user-name">Welcome back, {user?.name}!</span>
-                            <button className="dashboard-button" onClick={() => navigate("/dashboard")}>
-                                Go to Dashboard
+                <div className="login-container">
+                    <div className="login-content">
+                        {/* Display profile picture if authenticated */}
+                        {isAuthenticated && user.picture && (
+                            <img className="login-profile" src={user.picture} alt={user.name} />
+                        )}
+                        <h1>Welcome to CodeBench</h1>
+                        <p className="p">Track your progress <br />and <br /> reach your goals with ease!</p>
+                        
+                        {/* Conditional rendering based on authentication */}
+                        {isAuthenticated ? (
+                            <>
+                                <br />
+                                <span className="user-name">Welcome, {user?.name}!</span>
+                                <button className="dashboard-button" onClick={() => navigate("/dashboard")}>
+                                    Go to Dashboard
+                                </button>
+                                <button className="logout-button" onClick={() => logout({ returnTo: window.location.origin })}>
+                                    Log Out
+                                </button>
+                            </>
+                        ) : (
+                            <button className="login-button" onClick={handleLogin}>
+                                Log In / Sign Up
                             </button>
-                            <button className="logout-button" onClick={() => logout({ returnTo: window.location.origin })}>
-                                Log Out
-                            </button>
-                        </>
-                    ) : (
-                        <button className="login-button" onClick={handleLogin}>
-                            Log In
-                        </button>
-                    )}
+                        )}
+                    </div>
                 </div>
-            </div>
             </div>
         </>
     );

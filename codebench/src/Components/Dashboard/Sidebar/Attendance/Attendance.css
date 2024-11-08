@@ -1,0 +1,23 @@
+body{
+    all: unset;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(221, 239, 255);
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+}
+.attendance{
+    display: flex;
+    gap: 20px;
+
+}
+.attendance-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 1rem;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}

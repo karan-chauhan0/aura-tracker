@@ -3,7 +3,6 @@ import './Dashboard.css';
 import Sidebar from './Sidebar/Sidebar';
 import { Profile } from './Profile/Profile';
 import { Content } from './Content/Content';
-import { ContentHeader } from './Content/ContentHeader';
 
 function Dashboard() {
     return (
