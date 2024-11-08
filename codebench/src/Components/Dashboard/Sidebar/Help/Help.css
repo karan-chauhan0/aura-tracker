@@ -1,0 +1,157 @@
+body{
+    all: unset;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(221, 239, 255);
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+}
+.help{
+    display: flex;
+    gap: 20px;
+
+}
+.help-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 1rem;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.heading-icon{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.bicons{
+    display: flex;
+    flex-direction: row;
+}
+
+h2 {
+font-size: 1.1rem;
+color: #224f70;
+margin-bottom: 10px;
+}
+
+h3 {
+font-size: 1rem;
+color: #16a085;
+margin-top: 15px;
+padding-left: 20px;
+}
+
+/* Paragraph and list styles */
+p {
+font-size: .8rem;
+color: #34495e;
+margin-bottom: 15px;
+padding-left: 20px;
+}
+
+.para{
+    padding-left: 35px !important;
+}
+
+ul {
+/* list-style-type: none; */
+padding-left: 35px;
+}
+
+li {
+margin-bottom: 10px;
+font-size: .8rem;
+}
+
+/* Links */
+a {
+color: #224f70;
+text-decoration: none;
+}
+
+a:hover {
+text-decoration: underline;
+}
+
+/* Styling for FAQ section */
+.faq {
+margin-bottom: 15px;
+}
+
+/* Section styling */
+.section {
+margin-bottom: 30px;
+}
+
+.section ul {
+margin-left: 20px;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .help {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .help-container {
+        padding: 1.5rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    li {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .help-container {
+        padding: 1.5rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    li {
+        font-size: 0.9rem;
+    }
+}
+
+/* Additional styling for small screens */
+@media (max-width: 480px) {
+    .help-container {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+}
