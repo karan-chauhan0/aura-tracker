@@ -1,0 +1,53 @@
+*{
+    overflow-x: hidden;
+}
+.chart-container {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: flex-start;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    background-color: rgb(221, 239, 255);
+    padding: 30px 20px 30px 10px;
+    border-radius: 10px;
+}
+.card--cover{
+    color: #27374d;
+}
+.bar{
+    height: 500px;
+    width: 500px;
+}
+  
+.timetable-section {
+    width: 550px;
+    height: 470px;
+    overflow: hidden; /* Ensures content that overflows is hidden */
+}
+  
+.dashboard--table {
+    margin-top: 20px;
+    width: 550px;
+    height: 420px;  /* Make sure the timetable div has a set height */
+    overflow: hidden; /* Ensures content that overflows is hidden */
+    /* display: flex;
+    flex-direction: column; Ensure elements are stacked vertically */
+}
+  
+.dashboard--table th, .dashboard--table td {
+    text-align: center;
+    padding: 2px; /* Reduced padding for smaller table */
+    font-size: 10px; /* Adjust font size to fit the table into 100px */
+}
+  
+.days {
+    font-weight: bold;
+    font-size: 10px; /* Adjust font size */
+}
+  
+.labs {
+    background-color: #e0f7fa; /* Optional: lab classes can have a different background */
+}
+  

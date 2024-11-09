@@ -12,6 +12,7 @@ import Attendance from "./Components/Dashboard/Sidebar/Attendance/Attendance";
 import Help from "./Components/Dashboard/Sidebar/Help/Help";
 import Cards from './Components/Dashboard/Cards/Cards';
 import Teachers from './Components/Dashboard/Cards/Teachers';
+import Chart from "./Components/Dashboard/Chart/Chart";
 
 const App = () => {
     return (
@@ -95,6 +96,14 @@ const App = () => {
                     element={
                         <ProtectedRoute>
                             <Teachers />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="/chart"
+                    element={
+                        <ProtectedRoute>
+                            <Chart />
                         </ProtectedRoute>
                     }
                 />
