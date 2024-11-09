@@ -16,8 +16,13 @@ body{
     flex: 1;
     border-radius: 20px;
     padding: 2rem;
-    display: flex;
+    /* display: flex; */
     gap: 1.5rem;
     margin: 1rem;
+    /* justify-content: space-between; */
+}
+
+.dashboard-main{
+    display: flex;
     justify-content: space-between;
 }

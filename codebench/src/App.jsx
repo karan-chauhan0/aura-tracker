@@ -10,6 +10,8 @@ import TimeTableFirst from "./Components/Dashboard/Sidebar/TimeTable/TimeTableFi
 import TimeTable from "./Components/Dashboard/Sidebar/TimeTable/TimeTable";
 import Attendance from "./Components/Dashboard/Sidebar/Attendance/Attendance";
 import Help from "./Components/Dashboard/Sidebar/Help/Help";
+import Cards from './Components/Dashboard/Cards/Cards';
+import Teachers from './Components/Dashboard/Cards/Teachers';
 
 const App = () => {
     return (
@@ -80,6 +82,23 @@ const App = () => {
                         </ProtectedRoute>
                     }
                 />
+                <Route
+                    path="/cards"
+                    element={
+                        <ProtectedRoute>
+                            <Cards />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="/teachers"
+                    element={
+                        <ProtectedRoute>
+                            <Teachers />
+                        </ProtectedRoute>
+                    }
+                />
+                
             </Routes>
         </Router>
     );
