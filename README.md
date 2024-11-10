@@ -18,7 +18,7 @@ CSS for styling
 Getting Started
 
 Clone the repository:
-git clone https://github.com/your-username/AuraTracker.git
+git clone https://github.com/karan879767/AuraTracker.git
 cd AuraTracker
 cd codebench
 
