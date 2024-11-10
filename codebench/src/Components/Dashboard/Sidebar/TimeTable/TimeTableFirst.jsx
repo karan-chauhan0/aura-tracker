@@ -41,8 +41,8 @@ export const timetableFirst = [
         slots: [
             { time: "08:00 - 11:00", subject: "Shell Lab, L1 (B)", colSpan: 3 },
             { time: "11:00 - 12:00", subject: "C Class, GS8, AMB" },
-            { time: "12:00 - 01:00", subject: ""},
-            { time: "12:00 - 01:00", subject: ""},
+            { time: "12:00 - 01:00", subject: "" },
+            { time: "01:00 - 02:00", subject: "" },
             { time: "02:00 - 05:00", subject: "DCO Lab, L1 (B)", colSpan: 3 },
         ],
     },
@@ -51,11 +51,11 @@ export const timetableFirst = [
         slots: [
             { time: "08:00 - 09:00", subject: "IT Management, GS8" },
             { time: "09:00 - 10:00", subject: "FOL, SSH, GS8" },
-            { time: "11:00 - 12:00", subject: ""},
-            { time: "12:00 - 01:00", subject: ""},
-            { time: "01:00 - 02:00", subject: ""},
-            { time: "02:00 - 03:00", subject: ""},
-            { time: "03:00 - 04:00", subject: ""},
+            { time: "10:00 - 11:00", subject: "" },
+            { time: "11:00 - 12:00", subject: "" },
+            { time: "12:00 - 01:00", subject: "" },
+            { time: "01:00 - 02:00", subject: "" },
+            { time: "03:00 - 04:00", subject: "" },
             { time: "04:00 - 05:00", subject: "DCO Class, GS8, RT", colSpan: 2 },
         ],
     },
@@ -66,7 +66,7 @@ const TimeTableFirst = () => {
         <div className="container-timetable">
             <div className="timetable">
                 <div className="timetable-container">
-                    <table >
+                    <table>
                         <thead>
                             <tr>
                                 <th className="time">Time</th>
@@ -102,11 +102,11 @@ const TimeTableFirst = () => {
                         <table>
                             <tbody>
                                 <tr>
-                                    <td className="data-f"><strong>CS31101 =</strong> Programmming & Problem Solving (AMB)</td>
-                                    <td className="data-f"><strong>CS31201 =</strong> Programmming & Problem Solving (LAB) (AMB)</td>
+                                    <td className="data-f"><strong>CS31101 =</strong> Programming & Problem Solving (AMB)</td>
+                                    <td className="data-f"><strong>CS31201 =</strong> Programming & Problem Solving (LAB) (AMB)</td>
                                 </tr>
                                 <tr>
-                                    <td className="data-f"><strong>CS31102 =</strong> Principles of IT Industrial Management </td>
+                                    <td className="data-f"><strong>CS31102 =</strong> Principles of IT Industrial Management</td>
                                     <td className="data-f"></td>
                                 </tr>
                                 <tr>
@@ -114,13 +114,13 @@ const TimeTableFirst = () => {
                                     <td className="data-f"><strong>CS31202 =</strong> Digital Computer Organization (LAB) (RT)</td>
                                 </tr>
                                 <tr>
-                                    <td className="data-f"><strong>CS31104 =</strong> Foundation if Logics (SSH)</td>
+                                    <td className="data-f"><strong>CS31104 =</strong> Foundation of Logics (SSH)</td>
                                     <td className="data-f"><strong>CS31203 =</strong> Shell Programming (LAB) (RAN)</td>
                                 </tr>
                             </tbody>
                         </table>
-                        <div className="faculity">
-                            <p>RT = Rajesh Tripati</p>
+                        <div className="faculty">
+                            <p>RT = Rajesh Tripathi</p>
                             <p>AMB = Amita Biswas</p>
                             <p>SSH = Shalender Shukla</p>
                             <p>RAN = Ranvijay</p>

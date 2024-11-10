@@ -13,12 +13,13 @@ body{
 
 }
 .assignment-container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 1rem;
+    background: #fff;
+    flex: 1;
+    border-radius: 20px;
     padding: 2rem;
-    background-color: #fff;
-    border-radius: 10px;
+    gap: 1.5rem;
+    margin: 1rem;
+    width: 1200px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
   

@@ -37,10 +37,11 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    padding-left: 20px;
 }
 
 .menu--list .item{
-    font-size: 16px;
+    font-size: 17px;
     display: flex;
     align-items: center ;
     text-decoration: none;

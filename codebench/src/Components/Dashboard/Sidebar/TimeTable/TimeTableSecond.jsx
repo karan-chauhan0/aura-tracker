@@ -1,6 +1,71 @@
 import React from "react";
 import "./TimeTable.css"; 
 
+// TimeTableSecond.js
+export const timetableSecond = [
+    {
+        day: "Monday",
+        slots: [
+            { time: "08:00 - 09:00", subject: "" },
+            { time: "09:00 - 12:00", subject: "Operating System Lab, L3, AKM", colSpan:3 },
+            { time: "12:00 - 01:00", subject: "" },
+            { time: "01:00 - 02:00", subject: "" },
+            { time: "02:00 - 04:00", subject: "Soft Computing, NLH2, SS", colSpan:2 },
+            { time: "04:00 - 05:00", subject: "" },
+            { time: "05:00 - 06:00", subject: "" },
+        ],
+    },
+    {
+        day: "Tuesday",
+        slots: [
+            { time: "08:00 - 09:00", subject: "" },
+            { time: "09:00 - 10:00", subject: "Operating System, GS3, MMG" },
+            { time: "10:00 - 11:00", subject: "IT Management, GS8" },
+            { time: "11:00 - 12:00", subject: "" },
+            { time: "12:00 - 01:00", subject: "" },
+            { time: "01:00 - 02:00", subject: "" },
+            { time: "02:00 - 04:00", subject: "Data Management System, NLH1, AKS", colSpan:2 },
+            { time: "04:00 - 05:00", subject: "" },
+            { time: "05:00 - 06:00", subject: "" },
+        ],
+    },
+    {
+        day: "Wednesday",
+        slots: [
+            { time: "08:00 - 09:00", subject: "" },
+            { time: "09:00 - 11:00", subject: "Operating System, GS3, MMG", colSpan:2 },
+            { time: "11:00 - 12:00", subject: "" },
+            { time: "12:00 - 01:00", subject: "" },
+            { time: "01:00 - 02:00", subject: "Soft Computing, GS7, SS" },
+            { time: "02:00 - 03:00", subject: "Analysis of Algorithms, GS7, ABS" },
+            { time: "03:00 - 06:00", subject: "AOA LAB L2, DIN", colSpan:3 },
+        ],
+    },
+    {
+        day: "Thursday",
+        slots: [
+            { time: "08:00 - 10:00", subject: "Analysis Of Algorithms, NLH2, ABS", colSpan:2 },
+            { time: "10:00 - 12:00", subject: "Object Based Modeling, GS7, DKY", colSpan:2 },
+            { time: "12:00 - 01:00", subject: "" },
+            { time: "01:00 - 02:00", subject: "" },
+            { time: "02:00 - 05:00", subject: "AOA, CCTF Lab, ABS", colSpan:3 },
+            { time: "05:00 - 06:00", subject: "" },
+        ],
+    },
+    {
+        day: "Friday",
+        slots: [
+            { time: "08:00 - 09:00", subject: "" },
+            { time: "09:00 - 10:00", subject: "" },
+            { time: "10:00 - 12:00", subject: "DMS, NLH2, AKS", colSpan:2 },
+            { time: "12:00 - 01:00", subject: "" },
+            { time: "01:00 - 02:00", subject: "OBM, NLH2, DKY" },
+            { time: "02:00 - 05:00", subject: "Web Programming Lab L2, PD", colSpan:3 },
+            { time: "05:00 - 06:00", subject: "" },
+        ],
+    },
+];
+
 const TimeTableSecond = () => {
   return (
     <div className="container-timetable">
@@ -23,57 +88,20 @@ const TimeTableSecond = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td className="days">Monday</td>
-                            <td></td>
-                            <td className="labs" colSpan="3">Operating System Lab, L3, AKM</td>
-                            <td></td>
-                            <td></td>
-                            <td colSpan={2}>Soft Computing, NLH2, SS</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td className="days">Tuesday</td>
-                            <td></td>
-                            <td>Operating System, GS3, MMG</td>
-                            <td>IT Management, GS8</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td colSpan={2}>Data Management System, NLH!, AKS</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td className="days">Wednesday</td>
-                            <td></td>
-                            <td colSpan={2}>Operating System, GS3, MMG</td>
-                            <td></td>
-                            <td></td>
-                            <td>Soft Computing, GS7, SS</td>
-                            <td>Analysus of Algorithms, GS7, ABS</td>
-                            <td className="labs" colSpan={3}>AOA LAB L2, DIN</td>
-                        </tr>
-                        <tr>
-                            <td className="days">Thursday</td>
-                            <td colSpan={2}>Analysis Of Algorithms, NLH2, ABS</td>
-                            <td colSpan={2}>Object Based Modeling, GS&, DKY</td>
-                            <td></td>
-                            <td></td>
-                            <td className="labs" colSpan="3">AOA, CCTF LAB, ABS</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td className="days">Friday</td>
-                            <td></td>
-                            <td></td>
-                            <td colSpan={2}>DMS, NLH2, AKS</td>
-                            <td></td>
-                            <td>OBM, NLH2, DKY</td>
-                            <td className="labs" colSpan="3">Web Programming LAB L2, PD</td>
-                            <td></td>
-                        </tr>
+                        {timetableSecond.map(({ day, slots }) => (
+                            <tr key={day}>
+                                <td className="days">{day}</td>
+                                {slots.map((slot, index) => (
+                                    <td
+                                        key={index}
+                                        colSpan={slot.colSpan || 1}
+                                        className={slot.subject.includes("Lab") ? "labs" : ""}
+                                    >
+                                        {slot.subject}
+                                    </td>
+                                ))}
+                            </tr>
+                        ))}
                     </tbody>
                 </table>
             </div>
