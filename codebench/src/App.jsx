@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import Login from "./Components/Login/Login";
 import ProtectedRoute from "./Components/ProtectedRoute";
@@ -7,18 +7,31 @@ import Calender from "./Components/Dashboard/Sidebar/Calender/Calender";
 import Assignment from "./Components/Dashboard/Sidebar/Assignment/Assignment";
 import TimeTableSecond from "./Components/Dashboard/Sidebar/TimeTable/TimeTableSecond";
 import TimeTableFirst from "./Components/Dashboard/Sidebar/TimeTable/TimeTableFirst";
+import TimeTableSecondSem from "./Components/Dashboard/Sidebar/TimeTable/TimeTableSecondSem";
 import TimeTable from "./Components/Dashboard/Sidebar/TimeTable/TimeTable";
 import Attendance from "./Components/Dashboard/Sidebar/Attendance/Attendance";
 import Help from "./Components/Dashboard/Sidebar/Help/Help";
-import Cards from './Components/Dashboard/Cards/Cards';
-import Teachers from './Components/Dashboard/Cards/Teachers';
+import Cards from "./Components/Dashboard/Cards/Cards";
+import Teachers from "./Components/Dashboard/Cards/Teachers";
 import Chart from "./Components/Dashboard/Chart/Chart";
+import NotFound from "./Components/NotFound"; // Custom 404 Page
 
 const App = () => {
     return (
         <Router>
             <Routes>
-                <Route path="/" element={<Login />} /> {/* Default to login */}
+                {/* Public Routes */}
+                <Route path="/" element={<Login />} />
+
+                {/* Protected Routes */}
+                <Route
+                    path="/dashboard"
+                    element={
+                        <ProtectedRoute>
+                            <Dashboard />
+                        </ProtectedRoute>
+                    }
+                />
                 <Route
                     path="/calender"
                     element={
@@ -60,6 +73,14 @@ const App = () => {
                     }
                 />
                 <Route
+                    path="/timetable2ndsem"
+                    element={
+                        <ProtectedRoute>
+                            <TimeTableSecondSem />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
                     path="/attendance"
                     element={
                         <ProtectedRoute>
@@ -72,14 +93,6 @@ const App = () => {
                     element={
                         <ProtectedRoute>
                             <Help />
-                        </ProtectedRoute>
-                    }
-                />
-                <Route
-                    path="/dashboard"
-                    element={
-                        <ProtectedRoute>
-                            <Dashboard />
                         </ProtectedRoute>
                     }
                 />
@@ -107,7 +120,9 @@ const App = () => {
                         </ProtectedRoute>
                     }
                 />
-                
+
+                {/* 404 - Not Found */}
+                <Route path="*" element={<NotFound />} />
             </Routes>
         </Router>
     );

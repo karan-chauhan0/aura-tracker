@@ -3,6 +3,7 @@ import './Chart.css';
 import { Bar } from 'react-chartjs-2';  // Import the Bar chart component from react-chartjs-2
 import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js';
 
+
 export const timetableFirst = [
     {
         day: "Monday",
