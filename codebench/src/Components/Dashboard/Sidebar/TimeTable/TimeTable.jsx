@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Sidebar from '../Sidebar';
 import TimeTableFirst from './TimeTableFirst';
 import TimeTableSecond from './TimeTableSecond';
+import TimeTableSecondSem from './TimeTableSecondSem';
 import './TimeTable.css';
 
 const TimeTable = () => {
@@ -17,17 +18,19 @@ const TimeTable = () => {
                 <Sidebar />
                 <div className="timetable-container">
                     <h1 className="header--title">{
-                        selectedYear === "MCA 1st Year" ? "Time Table MCA 1st Year" : selectedYear === "MCA 2nd Year" ? "Time Table MCA 2nd Year" : "Time Table"
+                        selectedYear === "MCA 1st Year" ? "Time Table MCA 1st Year" : selectedYear === "MCA 2nd Year" ? "Time Table MCA 2nd Year" : selectedYear === "MCA 2nd Sem" ? "Time Table MCA 2nd Sem" : "Time Table"
                     }</h1>
                     <select name="year" className="year" onChange={handleChange}>
                         <option value="default">Select</option>
                         <option value="MCA 1st Year">MCA 1st Year</option>
                         <option value="MCA 2nd Year">MCA 2nd Year</option>
+                        <option value="MCA 2nd Sem">MCA 2nd Sem</option>
                     </select>
 
                     {/* Conditionally render the timetable based on the selected year */}
                     {selectedYear === "MCA 1st Year" && <TimeTableFirst />}
                     {selectedYear === "MCA 2nd Year" && <TimeTableSecond />}
+                    {selectedYear === "MCA 2nd Sem" && <TimeTableSecondSem />}
                 </div>
             </div>
         </div>

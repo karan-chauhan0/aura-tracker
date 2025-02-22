@@ -1,16 +1,15 @@
-import React from 'react';
-import { useAuth0 } from '@auth0/auth0-react';
-import { Navigate } from 'react-router-dom';
+import React from "react";
+import { Navigate } from "react-router-dom";
 
 const ProtectedRoute = ({ children }) => {
-    const { isAuthenticated, isLoading } = useAuth0();
+    const isAuthenticated = localStorage.getItem("token"); // Adjust as needed
 
-    if (isLoading) {
-        return <div>Loading...</div>; 
+    if (!isAuthenticated) {
+        console.log("User not authenticated - Redirecting to Login");
+        return <Navigate to="/" />;
     }
 
-    // If not authenticated, redirect to the login page
-    return isAuthenticated ? children : <Navigate to="/" />;
+    return children;
 };
 
 export default ProtectedRoute;

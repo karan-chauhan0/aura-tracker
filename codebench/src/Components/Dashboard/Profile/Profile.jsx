@@ -82,6 +82,7 @@ export const Profile = () => {
                 </div>
                 
                 <p><strong>Email : </strong> {user?.email}</p>
+                <p><strong>Reg. NO : </strong> 2024CA049</p>
                 <button className="p-lg" onClick={handleLogout} aria-label="Log Out">
                     <BiLogOut className='p-icon' size={15}/>
                     Log Out {/*Logout button */}
